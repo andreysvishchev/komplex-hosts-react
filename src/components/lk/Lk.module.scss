@@ -1,0 +1,11 @@
+@import "../../style/vars";
+
+.inner {
+  display: flex;
+}
+
+.content {
+  padding: 30px 20px 100px 40px;
+  background-color: $bg;
+  width: 100%;
+}
