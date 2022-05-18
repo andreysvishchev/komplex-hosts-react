@@ -3,6 +3,11 @@ import s from './Nav.module.scss'
 import {NavLink} from "react-router-dom";
 
 const Nav = () => {
+
+    const setActive = ({isActive}: { isActive: boolean }): string => {
+        return `${s.link} ${isActive ? s.active : ''}`;
+    }
+
     return (
         <nav className={s.wrap}>
 
@@ -14,26 +19,26 @@ const Nav = () => {
             <h3 className={s.title}>Личный кабинет</h3>
 
             <ul className={s.list}>
-                <li className={s.item}>
-                    <NavLink to="/services" className={`${s.link} ${s.services}`}>Услуги</NavLink>
+                <li className={`${s.item} ${s.services}`}>
+                    <NavLink to="/services" className={setActive}>Услуги</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/union" className={`${s.link} ${s.union}`}>Платежи</NavLink>
+                <li className={`${s.item} ${s.union}`}>
+                    <NavLink to="/union" className={setActive}>Платежи</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/notifications" className={`${s.link} ${s.notification}`}>Уведомления</NavLink>
+                <li className={`${s.item} ${s.notification}`}>
+                    <NavLink to="/notifications" className={setActive}>Уведомления</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/support" className={`${s.link} ${s.supp}`}>Техподдержка</NavLink>
+                <li className={`${s.item} ${s.supp}`}>
+                    <NavLink to="/support" className={setActive}>Техподдержка</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/docs" className={`${s.link} ${s.docs}`}>Документы</NavLink>
+                <li className={`${s.item} ${s.docs}`}>
+                    <NavLink to="/docs" className={setActive}>Документы</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/profile" className={`${s.link} ${s.profile}`}>Профиль</NavLink>
+                <li className={`${s.item} ${s.profile}`}>
+                    <NavLink to="/profile" className={setActive}>Профиль</NavLink>
                 </li>
-                <li className={s.item}>
-                    <NavLink to="/faq" className={`${s.link} ${s.faq}`}>FAQ</NavLink>
+                <li className={`${s.item} ${s.faq}`}>
+                    <NavLink to="/faq" className={setActive}>FAQ</NavLink>
                 </li>
             </ul>
             <div className={s.support}>

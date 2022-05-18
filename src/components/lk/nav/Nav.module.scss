@@ -25,19 +25,7 @@
   margin-right: -22px;
   margin-left: -22px;
   font-weight: 500;
-  opacity: 0.5;
   transition: background-color .2s ease-in-out, opacity .2s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-    background-color: rgba(237, 249, 255, .2);
-  }
-}
-
-.link {
-  display: block;
-  text-decoration: none;
-  padding: 8px 20px 8px 60px;
   position: relative;
 
   &::before {
@@ -93,6 +81,21 @@
       background-image: url('../../../img/faq.svg');
     }
   }
+
+
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  padding: 8px 20px 8px 60px;
+  opacity: .5;
+
+  &.active {
+    opacity: 1;
+    background-color: rgba(237, 249, 255, .2);
+  }
+
 }
 
 
@@ -120,6 +123,7 @@
     line-height: 24px;
     text-decoration: none;
   }
+
   &__item {
     margin-bottom: 8px;
   }
@@ -134,7 +138,6 @@
     display: block;
   }
 }
-
 
 
 .user {
