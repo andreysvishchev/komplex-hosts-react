@@ -1,30 +1,48 @@
-import React, {useState} from "react";
+import React from "react";
 import s from './Note.module.scss'
 import NoteMenu from "../note-menu/NoteMenu";
-import {StateType} from "../Notes";
+import {useDispatch} from "react-redux";
+import {deleteNoteAC, toggleMenuAC} from "../../../../../reducers/notesReducer";
 
-type PropsType = {
-    note: StateType
+type NotePropsType = {
+    id: number
+    data: string
+    caption: string
+    menuIsOpen: boolean
+    important: boolean
 }
 
-export const Note = (props: PropsType) => {
+export const Note: React.FC <NotePropsType> = (props) => {
 
-    let [open, setOpen] = useState<boolean>(false)
+    const {
+        id,
+        data,
+        caption,
+        menuIsOpen,
+        important
+    } = props
 
-    const openMenuHandler = () => {
-        setOpen(!open)
+    const dispatch = useDispatch()
+
+    const toggleMenuHandler = (noteId: number, open: boolean) => {
+        dispatch(toggleMenuAC(noteId, open))
     }
+
+    const deleteNote = (noteId: number)=> {
+        dispatch(deleteNoteAC(noteId))
+    }
+
     return (
         <div
-            className={open ? `${s.active} ${s.item}` : s.item}>
-            <div className={s.data}>{props.note.data}</div>
-            <div className={props.note.important ? `${s.caption} ${s.important}` : s.caption}>{props.note.caption}</div>
-            <button className={s.button} onClick={openMenuHandler}>
+            className={menuIsOpen ? `${s.active} ${s.item}` : s.item}>
+            <div className={s.data}>{data}</div>
+            <div className={important ? `${s.caption} ${s.important}` : s.caption}>{caption}</div>
+            <button className={s.button} onClick={()=>toggleMenuHandler(id, menuIsOpen)}>
                 <span/>
                 <span/>
                 <span/>
             </button>
-            <NoteMenu open={open}/>
+            <NoteMenu id={id} open={menuIsOpen} callBack={()=>deleteNote(id)}/>
         </div>
     )
 }
