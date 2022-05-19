@@ -5,7 +5,10 @@ import s from './InfoBlock.module.scss'
 const InfoBlock = () => {
     let state = [
         {title: 'Аренда места', number: '253/893.156',},
-        {title: 'Аренда места', number: '253/893.156',}
+        {title: 'Аренда места', number: '253/893.156',},
+        {title: 'Аренда места', number: '253/893.156',},
+        {title: 'Аренда места', number: '253/893.156',},
+        {title: 'Аренда места', number: '253/893.156',},
     ]
     return (
         <>
