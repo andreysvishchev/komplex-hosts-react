@@ -11,7 +11,7 @@ export type InitStateType = NoteType []
 let initState: InitStateType = [
     {id: 1, data: '27.10.2021', caption: 'Нужно не забыть заплатить за сервер!!!', important: true, menuIsOpen: false},
     {id: 2, data: '17.09.2021', caption: 'Пополнить счёт', important: false, menuIsOpen: false},
-    {id: 3, data: '27.10.2021', caption: 'Нужно не забыть заплатить за сервер!!!', important: false, menuIsOpen: false},
+    {id: 3, data: '27.10.2021', caption: 'НужYно не забыть заплатить за сервер!!!', important: false, menuIsOpen: false},
     {id: 4, data: '27.10.2021', caption: 'Нужно не забыть заплатить за сервер!!!', important: false, menuIsOpen: false}
 ]
 

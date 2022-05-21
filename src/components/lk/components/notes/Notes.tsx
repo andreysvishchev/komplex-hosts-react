@@ -5,7 +5,6 @@ import {useSelector} from "react-redux";
 import {RootStateType} from "../../../../store/store";
 import {NoteType} from "../../../../reducers/notesReducer";
 
-
 const Notes = () => {
 
     const notes = useSelector<RootStateType, Array<NoteType>>(state=> state.notes )
