@@ -1,5 +1,4 @@
 @import "../../../../style/vars";
-
 .wrap {
   background-color: $white;
   padding: 30px;
@@ -15,7 +14,6 @@
   align-items: center;
   margin-bottom: 24px;
   color: $dark-blue;
-
   &.zero {
     margin-bottom: 0;
   }
@@ -26,29 +24,6 @@
   font-size: 20px;
   line-height: 28px;
   margin-right: 16px;
-}
-
-.items {
-  overflow: auto;
-  height: 200px;
-  padding-right: 15px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-    background-color: $gray;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $blue;
-    border-radius: 10px;
-    width: 3px;
-    height: 27px;
-  }
 }
 
 .link {
@@ -63,5 +38,18 @@
   text-decoration: none;
 }
 
+.show {
+  min-height: 26px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $blue;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
 
-
+  &.hide {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import s from './Note.module.scss'
 import NoteMenu from "../note-menu/NoteMenu";
 import {useDispatch} from "react-redux";
-import {deleteNoteAC, toggleMenuAC} from "../../../../../reducers/notesReducer";
+import {closeMenuAC, deleteNoteAC, toggleMenuAC} from "../../../../../reducers/notesReducer";
 
 type NotePropsType = {
     id: number
@@ -30,6 +30,10 @@ export const Note: React.FC <NotePropsType> = (props) => {
 
     const deleteNote = (noteId: number)=> {
         dispatch(deleteNoteAC(noteId))
+    }
+
+    const closeMenu = () => {
+        dispatch(closeMenuAC())
     }
 
     return (
