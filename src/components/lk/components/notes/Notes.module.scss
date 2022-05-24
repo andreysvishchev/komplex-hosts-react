@@ -15,10 +15,6 @@
   align-items: center;
   margin-bottom: 24px;
   color: $dark-blue;
-
-  &.zero {
-    margin-bottom: 0;
-  }
 }
 
 .caption {
@@ -61,6 +57,20 @@
   border-radius: 50%;
   font-weight: 500;
   text-decoration: none;
+}
+
+.empty {
+  margin-bottom: 26px;
+}
+
+.addNote {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: $blue;
+  border: none;
+  color: $white;
+  cursor: pointer;
 }
 
 

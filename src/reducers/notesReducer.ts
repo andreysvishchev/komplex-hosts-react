@@ -22,7 +22,7 @@ export const notesReducer = (state: InitStateType = initState, action: ActionTyp
         case "DELETE-NOTE":
             return state.filter(el=> el.id !== action.noteId)
         case "CLOSE-MENU":
-            return state.map(el=> !el.menuIsOpen)
+            return state.map(el=> ({...el, menuIsOpen: false}) )
         default:
             return state
     }
