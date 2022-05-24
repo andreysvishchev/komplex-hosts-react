@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import InfoBlock from "../../components/info-block/InfoBlock";
+import RentBlock from "../../components/info-blocks/RentBlock";
 import s from './AllServices.module.scss'
 
 const AllServices = () => {
@@ -35,7 +35,7 @@ const AllServices = () => {
                         </div>
                     </div>
                 </>
-                : <InfoBlock/>
+                : <RentBlock/>
             }
 
 

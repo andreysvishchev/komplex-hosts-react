@@ -1,6 +1,7 @@
 import React from 'react';
-import Table from "../table/Table";
-import s from './InfoBlock.module.scss'
+import { RentTable } from '../tables/RentTable';
+
+import s from './RentBlock.module.scss'
 
 type StateType = {
     id: number
@@ -8,7 +9,7 @@ type StateType = {
     number: string
 }
 
-const InfoBlock = () => {
+const RentBlock = () => {
 
     let state: StateType [] = [
         {id: 1, title: 'Аренда места', number: '253/893.156',},
@@ -25,8 +26,9 @@ const InfoBlock = () => {
                                 <h4 className={s.caption}>{el.title}</h4>
                                 <span className={s.number}>{el.number}</span>
                                 <a href="#" className={s.link}>?</a>
+
                             </div>
-                            <Table/>
+                            <RentTable/>
                             <div className={s.bot}>
                                 <div className={s.data}>
                                     <span className={s.data__caption}>Дата подключения:</span>
@@ -55,4 +57,5 @@ const InfoBlock = () => {
     );
 };
 
-export default InfoBlock;
+export default RentBlock;
+

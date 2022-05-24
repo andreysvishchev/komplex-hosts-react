@@ -12,24 +12,15 @@
   border-bottom: 1px solid $gray;
   border-radius: 4px 4px 0px 0px;
   display: grid;
-  grid-template-columns: 1fr 170px 170px 170px;
   gap: 15px;
 }
 
 .row {
-  margin: 8px 19px;
+  padding: 8px 19px;
   display: grid;
-  grid-template-columns: 1fr 170px 170px 170px;
   gap: 15px;
 }
 
-.column {
-  &.price {
-    font-weight: 500;
-  }
-
-  &.sum {
-    font-weight: 600;
-    color: $dark-blue;
-  }
+.empty {
+  padding: 8px 19px;
 }

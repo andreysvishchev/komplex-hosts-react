@@ -1,12 +1,18 @@
 import React from 'react';
-import InfoBlock from "../../components/info-block/InfoBlock";
+import RentBlock from "../../components/info-blocks/RentBlock";
 import Notes from "../../components/notes/Notes";
+import EquipBlock from "../../components/info-blocks/EquipBlock";
+import ConfidantBlock from "../../components/info-blocks/ConfidantBlock";
+import IpBlock from "../../components/info-blocks/IpBlock";
 
 const PlaceRental = () => {
     return (
         <div>
-            <InfoBlock/>
+            <RentBlock/>
             <Notes/>
+            <EquipBlock/>
+            <ConfidantBlock/>
+            <IpBlock/>
         </div>
     );
 };
