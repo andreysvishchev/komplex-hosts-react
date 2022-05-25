@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Table.module.scss';
 import confidantTable from './ConfidantTable.module.scss'
+import NoteMenu from "../notes/note-menu/NoteMenu";
 
 type ConfidantTableType = {
     id: number
@@ -18,6 +19,10 @@ const ConfidantTable = () => {
         {id: 4, name: 'Иванов Иван Иванович', passport: '2230 495839', tel: '+7 (953) 335-34-43'},
     ]
 
+    const deleteItem = () => {
+
+    }
+
     return (
         <div>
             <div className={s.wrap}>
@@ -33,6 +38,7 @@ const ConfidantTable = () => {
                                 <div className={confidantTable.col}>{el.name}</div>
                                 <div className={confidantTable.col}>{el.passport}</div>
                                 <div className={confidantTable.col}>{el.tel}</div>
+                                <NoteMenu callBack={deleteItem}/>
                             </div>
                         )
                     })

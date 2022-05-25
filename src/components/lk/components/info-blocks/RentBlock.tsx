@@ -2,6 +2,7 @@ import React from 'react';
 import { RentTable } from '../tables/RentTable';
 
 import s from './RentBlock.module.scss'
+import ContextMenu from "../contextMenu/ContextMenu";
 
 type StateType = {
     id: number
@@ -14,6 +15,10 @@ const RentBlock = () => {
     let state: StateType [] = [
         {id: 1, title: 'Аренда места', number: '253/893.156',},
     ]
+
+    const callBack = ()=> {
+
+    }
     return (
         <>
             {state.length !== 0 ?
@@ -25,7 +30,7 @@ const RentBlock = () => {
                                 <h4 className={s.caption}>{el.title}</h4>
                                 <span className={s.number}>{el.number}</span>
                                 <a href="#" className={s.link}>?</a>
-
+                                <ContextMenu callBack={callBack}/>
                             </div>
                             <RentTable/>
                             <div className={s.bot}>
