@@ -3,12 +3,19 @@ import ConfidantTable from "../tables/ConfidantTable";
 import s from "./InfoBlock.module.scss";
 import Search from "../search/Search";
 import ContextMenu from "../contextMenu/ContextMenu";
+import {useDispatch} from "react-redux";
+import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
 
 
 const ConfidantBlock = () => {
 
-    const callBack = () => {
+    const dispatch = useDispatch()
+    const deleteAll = () => {
 
+    }
+
+    const callBack = () => {
+        dispatch(deleteAllConfidant())
     }
 
     return (

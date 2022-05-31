@@ -14,14 +14,12 @@ const ContextMenu = (props: ContextMenuPropsType) => {
     const [toggle, setToggle] = useState(false);
 
     const myRef = React.useRef() as MutableRefObject<HTMLDivElement>
-    const dispatch = useDispatch()
+
 
     const onClickHandler = () => {
         props.callBack()
     }
-    const deleteAll = () => {
-        dispatch(deleteAllConfidant())
-    }
+
 
     useOnClickOutside(myRef, () => setToggle(false))
 
@@ -35,7 +33,7 @@ const ContextMenu = (props: ContextMenuPropsType) => {
             </button>
             <div className={toggle ? `${s.menu} ${s.isOpen}` : s.menu}>
                 <button className={s.button}>Добавить</button>
-                <button onClick={deleteAll} className={s.button}>Удалить все</button>
+                <button onClick={onClickHandler} className={s.button}>Удалить все</button>
             </div>
         </div>
     );
