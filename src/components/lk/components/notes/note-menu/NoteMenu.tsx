@@ -22,7 +22,7 @@ const NoteMenu = (props: NoteMenuPropsType) => {
 
     return (
         <div className={s.wrap} ref={ref}>
-            <button  className={open ? `${s.burger} ${s.isOpen}` : s.burger} onClick={()=>setOpen(!open)}>
+            <button  className={open ? `${s.dots} ${s.isOpen}` : s.dots} onClick={()=>setOpen(!open)}>
                 <span/>
                 <span/>
                 <span/>

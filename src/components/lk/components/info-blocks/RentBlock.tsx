@@ -1,7 +1,6 @@
 import React from 'react';
-import { RentTable } from '../tables/RentTable';
-
-import s from './RentBlock.module.scss'
+import {RentTable} from '../tables/RentTable';
+import s from "./InfoBlock.module.scss";
 import ContextMenu from "../contextMenu/ContextMenu";
 
 type StateType = {
@@ -10,13 +9,17 @@ type StateType = {
     number: string
 }
 
-const RentBlock = () => {
+type PropsType = {
+    archive?: boolean
+}
+
+const RentBlock = (props: PropsType) => {
 
     let state: StateType [] = [
         {id: 1, title: 'Аренда места', number: '253/893.156',},
     ]
 
-    const callBack = ()=> {
+    const callBack = () => {
 
     }
     return (
@@ -29,21 +32,30 @@ const RentBlock = () => {
                             <div className={s.top}>
                                 <h4 className={s.caption}>{el.title}</h4>
                                 <span className={s.number}>{el.number}</span>
-                                <a href="#" className={s.link}>?</a>
-                                <ContextMenu callBack={callBack}/>
+                                {!props.archive && <a href="#" className={s.link}>?</a>}
+                                {!props.archive && <ContextMenu callBack={callBack}/>}
                             </div>
-                            <RentTable/>
-                            <div className={s.bot}>
+                            <RentTable archive={props.archive}/>
+                            <div className={!props.archive ? s.bot : `${s.bot} ${s.archive}`}>
                                 <div className={s.data}>
                                     <span className={s.data__caption}>Дата подключения:</span>
                                     <strong className={s.data__num}>21.05.2017</strong>
                                 </div>
-                                <div className={s.price}>
-                                    <span className={s.price__caption}>Итого:</span>
-                                    <strong className={s.price__sum}>3 300 ₽</strong>
-                                </div>
+                                {!props.archive
+                                    ? <div className={s.price}>
+                                        <span className={s.price__caption}>Итого:</span>
+                                        <strong className={s.price__sum}>3 300 ₽</strong>
+                                    </div>
+                                    : <>
+                                        <div className={s.slash}>|</div>
+                                        <div className={`${s.data} ${s.off}`}>
+                                            <span className={s.data__caption}>Дата подключения:</span>
+                                            <strong className={s.data__num}>21.05.2017</strong>
+                                        </div>
+                                    </>
+                                }
                             </div>
-                            <a href="/" className={s.more}>Подробнее</a>
+                            {!props.archive && <a href="/" className={s.more}>Подробнее</a>}
                         </div>
                     )
                 })

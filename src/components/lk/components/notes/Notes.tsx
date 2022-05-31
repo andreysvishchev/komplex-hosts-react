@@ -1,19 +1,19 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import s from './Notes.module.scss'
 import {Note} from "./note/Note";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../../store/store";
-import {closeMenuAC, NoteType} from "../../../../reducers/notesReducer";
-import NoteMenu from "./note-menu/NoteMenu";
+import {deleteAllNotes, NoteType} from "../../../../reducers/notesReducer";
 import ContextMenu from "../contextMenu/ContextMenu";
 
 
 const Notes = () => {
 
     const notes = useSelector<RootStateType, Array<NoteType>>(state => state.notes)
+    const dispatch = useDispatch()
 
     const deleteAll = () => {
-
+        dispatch(deleteAllNotes())
     }
 
     return (

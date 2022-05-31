@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Table.module.scss'
-import rentTable from './RentTable.module.scss'
 
 type StateTye = {
     name: string
@@ -10,27 +9,32 @@ type StateTye = {
     sum: number
 }
 
-export const RentTable = () => {
-    let state : StateTye [] = [
+type PropsType = {
+    archive?: boolean
+}
+
+export const RentTable = (props: PropsType) => {
+    let state: StateTye [] = [
         {name: 'Аренда места', spec: 'Unit', price: 1500, amount: 2, sum: 3000},
         {name: 'Электропитание', spec: 'Watt', price: 150, amount: 200, sum: 30000},
         {name: 'Порт коммутатора', price: 1500, amount: 1, sum: 150},
     ]
     return (
         <div className={s.wrap}>
-            <div className={`${s.captions} ${rentTable.captions}`}>
-                <h6 className={rentTable.caption}>Наименование услуги</h6>
-                <h6 className={rentTable.caption}>Цена</h6>
-                <h6 className={rentTable.caption}>Кол-во</h6>
-                <h6 className={rentTable.caption}>Сумма</h6>
+            <div className={!props.archive ? `${s.captions} ${s.rent}` : `${s.captions} ${s.rent} ${s.archive}`}>
+                <h6 className={s.caption}>Наименование услуги</h6>
+                {!props.archive && <h6 className={s.caption}>Цена</h6>}
+                <h6 className={s.caption}>Кол-во</h6>
+                {!props.archive && <h6 className={s.caption}>Сумма</h6>}
             </div>
             {state.map((el, i) => {
                 return (
-                    <div className={`${s.row} ${rentTable.row}`} key={i}>
-                        <div className={`${rentTable.col} ${rentTable.name}`}>{el.name} <span>{el.spec}</span></div>
-                        <div className={`${rentTable.col} ${rentTable.price}`}>{el.price}</div>
-                        <div className={rentTable.col}>{el.amount}</div>
-                        <div className={`${rentTable.col} ${rentTable.sum}`}>{el.sum}</div>
+                    <div className={!props.archive ? `${s.row} ${s.rent}` : `${s.row} ${s.rent} ${s.archive}`} key={i}>
+                        <div className={`${s.col} ${s.name}`}>{el.name} <span>{el.spec}</span></div>
+                        {!props.archive && <div className={`${s.col} ${s.price}`}>{el.price}</div>}
+                        <div className={s.col}>{el.amount}</div>
+                        {!props.archive && <div className={`${s.col} ${s.sum}`}>{el.sum}</div>}
+
                     </div>
                 )
             })}
