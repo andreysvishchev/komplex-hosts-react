@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/komplex-hosts-react/static/css/main.cf9944a7.css",
-    "main.js": "/komplex-hosts-react/static/js/main.f2f8ab5c.js",
+    "main.css": "/komplex-hosts-react/static/css/main.003b4cac.css",
+    "main.js": "/komplex-hosts-react/static/js/main.0ff06049.js",
     "static/media/logo-header.svg": "/komplex-hosts-react/static/media/logo-header.ffb32aae6e2f896ba6af0fe00866dec2.svg",
     "static/media/logo.svg": "/komplex-hosts-react/static/media/logo.d26631dfe27a70d03b153bac87cc408f.svg",
     "static/media/server.svg": "/komplex-hosts-react/static/media/server.6c3b7349df5996ef4be0.svg",
@@ -12,6 +12,7 @@
     "static/media/place.svg": "/komplex-hosts-react/static/media/place.3625591ebbe14d23ea00.svg",
     "static/media/payments.svg": "/komplex-hosts-react/static/media/payments.96d7f64d1a836c62e8ad.svg",
     "static/media/faq.svg": "/komplex-hosts-react/static/media/faq.06dd26247054b0649a6c.svg",
+    "static/media/doc.svg": "/komplex-hosts-react/static/media/doc.02e52f19b0189403ed37.svg",
     "static/media/aside-icon-4.svg": "/komplex-hosts-react/static/media/aside-icon-4.d358dac0cc2e433e249f.svg",
     "static/media/user.svg": "/komplex-hosts-react/static/media/user.d6b00ddb4276b97525e1.svg",
     "static/media/user-nav.svg": "/komplex-hosts-react/static/media/user-nav.c28534098df1a746a53a.svg",
@@ -22,6 +23,7 @@
     "static/media/download.svg": "/komplex-hosts-react/static/media/download.d17062294a352ed1e1d8.svg",
     "static/media/home.svg": "/komplex-hosts-react/static/media/home.fd8ba87e2d6aa9ebdecc.svg",
     "static/media/docs.svg": "/komplex-hosts-react/static/media/docs.21044a8010a1967ba763.svg",
+    "static/media/download-blue.svg": "/komplex-hosts-react/static/media/download-blue.13c99b69bc02a50d2ac2.svg",
     "index.html": "/komplex-hosts-react/index.html",
     "static/media/notification-nav.svg": "/komplex-hosts-react/static/media/notification-nav.f5ff092c332ee15ba237.svg",
     "static/media/search.svg": "/komplex-hosts-react/static/media/search.4b7639dcf0498780cc3a.svg",
@@ -29,11 +31,11 @@
     "static/media/mail.svg": "/komplex-hosts-react/static/media/mail.7b24ac1561e686dc0ed9.svg",
     "static/media/pencil.svg": "/komplex-hosts-react/static/media/pencil.a54aaae3ee0a86e9ea4b.svg",
     "static/media/important.svg": "/komplex-hosts-react/static/media/important.1abd8958cc95e402f395.svg",
-    "main.cf9944a7.css.map": "/komplex-hosts-react/static/css/main.cf9944a7.css.map",
-    "main.f2f8ab5c.js.map": "/komplex-hosts-react/static/js/main.f2f8ab5c.js.map"
+    "main.003b4cac.css.map": "/komplex-hosts-react/static/css/main.003b4cac.css.map",
+    "main.0ff06049.js.map": "/komplex-hosts-react/static/js/main.0ff06049.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf9944a7.css",
-    "static/js/main.f2f8ab5c.js"
+    "static/css/main.003b4cac.css",
+    "static/js/main.0ff06049.js"
   ]
 }
