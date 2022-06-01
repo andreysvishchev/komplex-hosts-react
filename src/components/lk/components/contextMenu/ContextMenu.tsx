@@ -15,11 +15,9 @@ const ContextMenu = (props: ContextMenuPropsType) => {
 
     const myRef = React.useRef() as MutableRefObject<HTMLDivElement>
 
-
     const onClickHandler = () => {
         props.callBack()
     }
-
 
     useOnClickOutside(myRef, () => setToggle(false))
 

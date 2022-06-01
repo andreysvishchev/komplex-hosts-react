@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://andreysvishchev.github.io/komplex-hosts-react",
   "dependencies": {
+    "@react-spring/web": "^9.4.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -20,6 +21,7 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.4.5",
     "react-tabs": "^5.1.0",
     "redux": "^4.2.0",
     "sass": "^1.51.0",

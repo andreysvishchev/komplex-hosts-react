@@ -5,7 +5,7 @@ import Services from "./services/Services";
 import s from './Lk.module.scss'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Union from "./Union/Union";
-import Notifications from "./notifications/Notifications";
+import Notice from "./notifications/Notice";
 import Support from "./support/Support";
 import Docs from "./docs/Docs";
 import Profile from "./profile/Profile";
@@ -14,7 +14,7 @@ import Faq from "./faq/Faq";
 const Lk = () => {
     return (
         <BrowserRouter>
-            <div className={s.wrap}>
+            <div className={s.main}>
             <Header/>
             <div className={s.inner}>
                 <Nav/>
@@ -22,7 +22,7 @@ const Lk = () => {
                     <Routes>
                         <Route path="/services" element={<Services/>} />
                         <Route path="/union" element={<Union/>} />
-                        <Route path="/notifications" element={<Notifications/>} />
+                        <Route path="/notifications" element={<Notice/>} />
                         <Route path="/support" element={<Support/>} />
                         <Route path="/docs" element={<Docs/>} />
                         <Route path="/profile" element={<Profile/>} />

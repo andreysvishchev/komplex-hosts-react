@@ -7,7 +7,7 @@ const Union = () => {
         <div className={s.wrap}>
             <div className={s.top}>
                 <div className={s.col}>
-                    <h4 className={s.caption}>Все платежи</h4>
+                    <div className={s.caption}>Все платежи</div>
                     <button className={s.tooltip}>?</button>
                 </div>
                 <button className={s.button}>Сформировать акт сверки</button>
