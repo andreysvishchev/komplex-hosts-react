@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import './App.css';
-import Authorization from "./components/authorization/Authorization";
-import Lk from "./components/lk/Lk";
+import Authorization from "./pages/authorization/Authorization";
+import Lk from "./pages/lk/Lk";
 
 
 function App() {

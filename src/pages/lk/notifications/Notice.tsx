@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from '../Lk.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../store/store";
@@ -8,11 +8,14 @@ import NoticeAccordion from "../components/noticeAccordion/NoticeAccordion";
 const Notice = () => {
 
     const notice = useSelector<RootStateType, NoticeType[]>(state => state.notice)
+
     const dispatch = useDispatch()
 
     const readNotice = (noticeId:number)=> {
         dispatch(readNoticeAC(noticeId))
     }
+
+
 
 
     return (
@@ -38,8 +41,6 @@ const Notice = () => {
                                 />
                             )
                         })
-
-
                 }
 
             </div>
