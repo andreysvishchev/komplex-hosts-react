@@ -1,38 +1,37 @@
 import React from 'react';
 import s from './Table.module.scss';
-import confidantTable from './ConfidantTable.module.scss'
+import NoteMenu from "../notes/note-menu/NoteMenu";
+import {useSelector} from "react-redux";
+import {RootStateType} from "../../../../store/store";
+import {ConfidantType} from "../../../../reducers/confidantReducer";
 
-type ConfidantTableType = {
-    id: number
-    name: string
-    passport: string
-    tel: string
-}
+
 
 const ConfidantTable = () => {
 
-    let table: ConfidantTableType[] = [
-        {id: 1, name: 'Иванов Иван Иванович', passport: '2230 495839', tel: '+7 (953) 335-34-43'},
-        {id: 2, name: 'Иванов Иван Иванович', passport: '2230 495839', tel: '+7 (953) 335-34-43'},
-        {id: 3, name: 'Иванов Иван Иванович', passport: '2230 495839', tel: '+7 (953) 335-34-43'},
-        {id: 4, name: 'Иванов Иван Иванович', passport: '2230 495839', tel: '+7 (953) 335-34-43'},
-    ]
+
+    const state = useSelector<RootStateType, ConfidantType[]>(state => state.confidant)
+
+    const deleteItem = () => {
+
+    }
 
     return (
         <div>
             <div className={s.wrap}>
-                <div className={`${s.captions} ${confidantTable.captions}`}>
-                    <h6 className={confidantTable.caption}>ФИО</h6>
-                    <h6 className={confidantTable.caption}>Серия и номер паспорта</h6>
-                    <h6 className={confidantTable.caption}>Телефон</h6>
+                <div className={`${s.captions} ${s.confidant}`}>
+                    <h6 className={`${s.caption} ${s.confidant}`}>ФИО</h6>
+                    <h6 className={`${s.caption} ${s.confidant}`}>Серия и номер паспорта</h6>
+                    <h6 className={`${s.caption} ${s.confidant}`}>Телефон</h6>
                 </div>
-                {table.length !== 0 ?
-                    table.map(el => {
+                {state.length !== 0 ?
+                    state.map(el => {
                         return (
-                            <div className={`${s.row} ${confidantTable.row}`} key={el.id}>
-                                <div className={confidantTable.col}>{el.name}</div>
-                                <div className={confidantTable.col}>{el.passport}</div>
-                                <div className={confidantTable.col}>{el.tel}</div>
+                            <div className={`${s.row} ${s.confidant}`} key={el.id}>
+                                <div className={s.col}>{el.name}</div>
+                                <div className={s.col}>{el.passport}</div>
+                                <div className={s.col}>{el.tel}</div>
+                                <NoteMenu callBack={deleteItem}/>
                             </div>
                         )
                     })

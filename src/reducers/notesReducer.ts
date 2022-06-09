@@ -21,18 +21,18 @@ export const notesReducer = (state: InitStateType = initState, action: ActionTyp
             return state.map(el=> el.id === action.noteId ? {...el, menuIsOpen: !action.open } : {...el, menuIsOpen: false})
         case "DELETE-NOTE":
             return state.filter(el=> el.id !== action.noteId)
-        case "CLOSE-MENU":
-            return state.map(el=> !el.menuIsOpen)
+        case "DELETE-ALL-NOTES":
+            return state = []
         default:
             return state
     }
 }
 
-export type ActionType = ToggleMenuActionType | DeleteNoteActionType | closeMenuActionType
+export type ActionType = ToggleMenuActionType | DeleteNoteActionType | DeleteAllNotesActionType
 
 type ToggleMenuActionType = ReturnType<typeof toggleMenuAC>
 type DeleteNoteActionType = ReturnType<typeof deleteNoteAC>
-type closeMenuActionType = ReturnType<typeof closeMenuAC>
+type DeleteAllNotesActionType = ReturnType<typeof deleteAllNotes>
 
 export const toggleMenuAC = (noteId: number, open: boolean) => {
     return {
@@ -41,15 +41,15 @@ export const toggleMenuAC = (noteId: number, open: boolean) => {
         open
     } as const
 }
-
 export const deleteNoteAC = (noteId: number) => {
     return {
         type: 'DELETE-NOTE',
         noteId
     } as const
 }
-export const closeMenuAC = () => {
+
+export const deleteAllNotes = () => {
     return {
-        type: 'CLOSE-MENU',
+        type: 'DELETE-ALL-NOTES',
     } as const
 }

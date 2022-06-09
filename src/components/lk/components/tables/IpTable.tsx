@@ -1,6 +1,5 @@
 import React from 'react';
 import s from "./Table.module.scss";
-import ipTable from "./IpTable.module.scss";
 
 type StateType = {
     id: number
@@ -16,18 +15,18 @@ const IpTable = () => {
 
     return (
         <div className={s.wrap}>
-            <div className={`${s.captions} ${ipTable.captions}`}>
-                <h6 className={ipTable.caption}>IP-адрес</h6>
-                <h6 className={ipTable.caption}>Маска</h6>
-                <h6 className={ipTable.caption}>Шлюз</h6>
+            <div className={`${s.captions} ${s.ip}`}>
+                <h6 className={s.caption}>IP-адрес</h6>
+                <h6 className={s.caption}>Маска</h6>
+                <h6 className={s.caption}>Шлюз</h6>
             </div>
             { state.length !== 0 ?
                 state.map((el, i) => {
                 return (
-                    <div className={`${s.row} ${ipTable.row}`} key={el.id}>
-                        <div className={ipTable.col}>{el.ip}</div>
-                        <div className={ipTable.col}>{el.mask}</div>
-                        <div className={ipTable.col}>{el.gateway}</div>
+                    <div className={`${s.row} ${s.ip}`} key={el.id}>
+                        <div className={s.col}>{el.ip}</div>
+                        <div className={s.col}>{el.mask}</div>
+                        <div className={s.col}>{el.gateway}</div>
                     </div>
                 )
             }) : <div className={s.empty}>В таблице пока нет записей</div>

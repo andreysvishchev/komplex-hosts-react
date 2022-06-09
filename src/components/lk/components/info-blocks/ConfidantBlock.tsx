@@ -1,17 +1,32 @@
 import React from 'react';
 import ConfidantTable from "../tables/ConfidantTable";
-import s from "./EquipBlock.module.scss";
+import s from "./InfoBlock.module.scss";
 import Search from "../search/Search";
-import EquipTable from "../tables/EquipTable";
+import ContextMenu from "../contextMenu/ContextMenu";
+import {useDispatch} from "react-redux";
+import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
 
 
 const ConfidantBlock = () => {
+
+    const dispatch = useDispatch()
+    const deleteAll = () => {
+
+    }
+
+    const callBack = () => {
+        dispatch(deleteAllConfidant())
+    }
+
     return (
         <div className={s.wrap}>
-            <div className={s.top}>
-                <h4 className={s.caption}>Доверенное лицо</h4>
-                <a href="#" className={s.link}>?</a>
+            <div className={`${s.top} ${s.grid}`}>
+                <div className={s.col}>
+                    <h4 className={s.caption}>Доверенное лицо</h4>
+                    <a href="#" className={s.link}>?</a>
+                </div>
                 <Search/>
+                <ContextMenu callBack={callBack}/>
             </div>
             <ConfidantTable/>
             <button className={s.show}>Развернуть всех</button>

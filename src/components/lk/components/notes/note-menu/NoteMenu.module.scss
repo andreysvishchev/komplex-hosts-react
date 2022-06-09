@@ -3,7 +3,7 @@
 .menu {
   position: absolute;
   z-index: 10;
-  bottom: -70px;
+  bottom: -50px;
   right: 35px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   border-radius: 0px 0px 4px 4px;
@@ -22,9 +22,42 @@
   cursor: pointer;
   border: none;
   transition: background-color .2s ease-in-out;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
 
   &:hover {
     background-color: rgba(0, 182, 244, .1);
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $gray;
+    margin: 0 3px;
+    transition: background-color .2s ease-in-out;
+  }
+
+  &.isOpen {
+    span {
+      background-color: $blue;
+    }
   }
 }
 

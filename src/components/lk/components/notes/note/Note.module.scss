@@ -9,7 +9,6 @@
   border: 1px solid $gray;
   border-radius: 4px;
   position: relative;
-  z-index: 1;
   height: 40px;
 
   &.active {
@@ -48,20 +47,6 @@
   }
 }
 
-.button {
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
 
-  span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: $gray;
-    margin: 0 3px;
-  }
-}
+
 

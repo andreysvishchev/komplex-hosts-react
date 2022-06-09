@@ -1,7 +1,5 @@
 import React from 'react';
-import s from './Block.module.scss'
-import Search from "../search/Search";
-import ConfidantTable from "../tables/ConfidantTable";
+import s from './InfoBlock.module.scss'
 import IpTable from "../tables/IpTable";
 
 
