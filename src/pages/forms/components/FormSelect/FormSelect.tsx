@@ -7,7 +7,7 @@ type PropsType = {
     placeholder?: string
 }
 
-const FormSelect:React.FC<PropsType> = (props) => {
+const FormSelect: React.FC<PropsType> = (props) => {
     const {
         caption,
         placeholder,
@@ -23,15 +23,41 @@ const FormSelect:React.FC<PropsType> = (props) => {
         control: () => ({
             border: '1px solid #DEDEDE',
             borderRadius: '4px',
-            display: 'flex'
-        })
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '100%',
+        }),
+        valueContainer: () => ({
+            padding: '8px 16px',
+            display: 'flex',
+        }),
+        indicatorsContainer: () => ({
+            border: 'none',
+        }),
+        input: () => ({
+            margin: 0,
+            padding: 0
+        }),
+        placeholder: () => ({
+            color: '#818181'
+        }),
+        menu: (provided: any)=> ({
+      ...provided,
+            boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.05)',
+
+            border: 'none',
+            borderRadius: '0px 0px 4px 4px',
+        }),
+
+
+
     }
 
 
     return (
         <div className={s.select}>
             <div className={s.select__caption}>{caption}</div>
-            <Select options={options} styles={customStyles}/>
+            <Select options={options} styles={customStyles} placeholder={placeholder} />
         </div>
     );
 };
