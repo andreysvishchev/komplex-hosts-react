@@ -8,10 +8,6 @@ import {button, theme} from "../../style/style";
 
 
 
-
-
-
-
 const LegalAddress = () => {
 
 
@@ -23,9 +19,9 @@ const LegalAddress = () => {
                 <FormInput caption={'Индекс'}/>
                 <FormSelect caption={'Страна'} placeholder={'Введите страну'}/>
             </div>
-            <FormSelect caption={'Область'}/>
-            <FormSelect caption={'Район/Округ'}/>
-            <FormSelect caption={'Населенный пункт'}/>
+            <FormSelect caption={'Область'} placeholder={'Введите область'}/>
+            <FormSelect caption={'Район/Округ'} placeholder={'Введите Район или округ'}/>
+            <FormSelect caption={'Населенный пункт'} placeholder={'Введите населенный пункт'}/>
             <FormInput caption={'Улица'}/>
             <div className={s.form__row} style={{marginBottom: '16px'}}>
                 <FormInput caption={'Дом'}/>
