@@ -10,11 +10,8 @@ import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
 const ConfidantBlock = () => {
 
     const dispatch = useDispatch()
+
     const deleteAll = () => {
-
-    }
-
-    const callBack = () => {
         dispatch(deleteAllConfidant())
     }
 
@@ -26,7 +23,7 @@ const ConfidantBlock = () => {
                     <a href="#" className={s.link}>?</a>
                 </div>
                 <Search/>
-                <ContextMenu callBack={callBack}/>
+                <ContextMenu callBack={deleteAll} />
             </div>
             <ConfidantTable/>
             <button className={s.show}>Развернуть всех</button>

@@ -1,9 +1,10 @@
 import React, {memo, MouseEventHandler, useCallback, useEffect, useRef, useState} from "react";
 import s from './Note.module.scss'
-import NoteMenu from "../note-menu/NoteMenu";
+import TableMenu from "../../table-menu/TableMenu";
 import {useDispatch} from "react-redux";
 import {deleteNoteAC} from "../../../../../reducers/notesReducer";
 import ContextMenu from "../../contextMenu/ContextMenu";
+import NoteMenu from "../../note-menu/NoteMenu";
 
 type NotePropsType = {
     id: number

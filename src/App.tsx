@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import Authorization from "./pages/authorization/Authorization";
+import Auth from "./pages/authorization/Auth";
 import Lk from "./pages/lk/Lk";
 
 
 function App() {
 
-    const [auth, setAuth] = useState<boolean>(true)
+    const [auth, setAuth] = useState<boolean>(false)
 
     return (
         <div className="App">
 
 
-            {auth ? <Lk/> :<Authorization/>}
+            {auth ? <Lk/> :<Auth/>}
 
 
 

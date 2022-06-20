@@ -1,0 +1,40 @@
+@import "../../style/vars";
+
+.caption {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 32px;
+}
+
+.row {
+  margin-top: 34px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cansel,
+.save {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 24px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+}
+
+.cansel {
+  color: $dark-blue;
+  border: 1px solid $dark-blue;
+  background-color: transparent;
+}
+
+.save {
+  border: 1px solid transparent;
+  color: white;
+  background-color: $blue;
+}
+

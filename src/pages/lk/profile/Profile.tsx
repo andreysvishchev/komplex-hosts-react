@@ -1,7 +1,10 @@
 import React from 'react';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import s from "../Lk.module.scss";
-import LegalAddress from "../../forms/LegalAddress";
+import AddressForm from '../../forms/AddressForm';
+import ContactsForm from "../../forms/ContactsForm";
+import RequisitesForm from "../../forms/RequisitesForm";
+import CommonForm from "../../forms/CommonForm";
 
 const Profile = () => {
 
@@ -22,19 +25,22 @@ const Profile = () => {
                     <div className={`${s.wrap} ${s.tabs__list}`}>
                         <TabPanel>
                             <div className={s.profile__title}>Общее</div>
+                            <CommonForm/>
                         </TabPanel>
                         <TabPanel>
                             <div className={s.profile__title}>Юридический адрес</div>
-                            <LegalAddress/>
+                            <AddressForm/>
                         </TabPanel>
                         <TabPanel>
                             <div className={s.profile__title}>Почтовый адрес</div>
+                            <AddressForm/>
                         </TabPanel>
                         <TabPanel>
                             <div className={s.profile__title}>Банковские реквизиты</div>
+                            <RequisitesForm/>
                         </TabPanel>
                         <TabPanel>
-                            <div className={s.profile__title}>Контактное лицо</div>
+                            <ContactsForm/>
                         </TabPanel>
                     </div>
                     <TabList className={`${s.wrap} ${s.tabs__buttons}` }>

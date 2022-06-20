@@ -1,15 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from "../../Form.module.scss";
-
-import {
-    FormControl,
-    makeStyles,
-    MenuItem,
-    OutlinedInput,
-    Select,
-    SelectChangeEvent,
-    selectClasses
-} from "@mui/material";
+import Select from "react-select";
 
 type PropsType = {
     caption: string
@@ -22,9 +13,7 @@ const FormSelect: React.FC<PropsType> = (props) => {
         placeholder,
     } = props
 
-
-
-    const state = [
+    const options = [
         {value: 'chocolate', label: 'Chocolate'},
         {value: 'strawberry', label: 'Strawberry'},
         {value: 'vanilla', label: 'Vanilla'},
@@ -42,43 +31,11 @@ const FormSelect: React.FC<PropsType> = (props) => {
         {value: 'vanilla', label: 'Vanilla'},
     ];
 
-    const [options, setOptions]= useState<string[]>([])
-
-    const handleChange = (event: SelectChangeEvent<typeof options>) => {
-        const {
-            target: { value },
-        } = event;
-        setOptions(
-            typeof value === 'string' ? value.split(',') : value,
-        );
-    };
-
     return (
-        <div className={s.wrap}>
-            <div className={s.caption}>{caption}</div>
-            <FormControl fullWidth>
-                <Select
-
-                    displayEmpty
-                    onChange={handleChange}
-                    value={options}
-                    renderValue={(selected) => {
-                        if (selected.length === 0) {
-                            return <em>{placeholder}</em>;
-                        }
-                        return selected.join(', ');
-                    }}>
-                    {state.map(el => {
-                        return (
-                            <MenuItem key={el.value} value={el.value}>{el.label}</MenuItem>
-                        )
-                    })}
-                </Select>
-
-
-            </FormControl>
+        <div className={s.select}>
+            <div className={s.select__caption}>{caption}</div>
+            <Select options={options} classNamePrefix='custom-select' placeholder={placeholder}/>
         </div>
-
     );
 };
 

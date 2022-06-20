@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './Table.module.scss';
-import NoteMenu from "../notes/note-menu/NoteMenu";
-import {useSelector} from "react-redux";
+import TableMenu from "../table-menu/TableMenu";
+import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../../store/store";
-import {ConfidantType} from "../../../../reducers/confidantReducer";
+import {ConfidantType, deleteConfidantAC} from "../../../../reducers/confidantReducer";
 
 
 
@@ -11,9 +11,10 @@ const ConfidantTable = () => {
 
 
     const state = useSelector<RootStateType, ConfidantType[]>(state => state.confidant)
+    const dispatch = useDispatch()
 
-    const deleteItem = () => {
-
+    const deleteItem = (id: number) => {
+        dispatch(deleteConfidantAC(id))
     }
 
     return (
@@ -31,7 +32,7 @@ const ConfidantTable = () => {
                                 <div className={s.col}>{el.name}</div>
                                 <div className={s.col}>{el.passport}</div>
                                 <div className={s.col}>{el.tel}</div>
-                                <NoteMenu callBack={deleteItem}/>
+                                <TableMenu callBack={()=>deleteItem(el.id)} model={el}/>
                             </div>
                         )
                     })

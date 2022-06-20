@@ -1,4 +1,4 @@
-@import "../../../../../style/vars";
+@import "../../../../style/vars";
 
 .menu {
   position: absolute;
@@ -25,6 +25,7 @@
   font-size: 12px;
   line-height: 16px;
   text-align: left;
+  outline: none;
 
   &:hover {
     background-color: rgba(0, 182, 244, .1);
@@ -55,6 +56,11 @@
   }
 
   &.isOpen {
+    span {
+      background-color: $dark-blue;
+    }
+  }
+  &.blue.isOpen {
     span {
       background-color: $blue;
     }

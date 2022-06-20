@@ -1,14 +1,15 @@
 import React from 'react';
 import Aside from "./aside/Aside";
 import Entrance from "./entrance/Entrance";
+import s from './Auth.module.scss'
 
-const Authorization = () => {
+const Auth = () => {
     return (
-        <div>
+        <div className={s.wrap}>
             <Aside/>
             <Entrance/>
         </div>
     );
 };
 
-export default Authorization;
+export default Auth;
