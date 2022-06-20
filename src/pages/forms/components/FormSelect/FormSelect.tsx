@@ -28,6 +28,18 @@ const FormSelect: React.FC<PropsType> = (props) => {
         {value: 'chocolate', label: 'Chocolate'},
         {value: 'strawberry', label: 'Strawberry'},
         {value: 'vanilla', label: 'Vanilla'},
+        {value: 'chocolate', label: 'Chocolate'},
+        {value: 'strawberry', label: 'Strawberry'},
+        {value: 'vanilla', label: 'Vanilla'},
+        {value: 'chocolate', label: 'Chocolate'},
+        {value: 'strawberry', label: 'Strawberry'},
+        {value: 'vanilla', label: 'Vanilla'},
+        {value: 'chocolate', label: 'Chocolate'},
+        {value: 'strawberry', label: 'Strawberry'},
+        {value: 'vanilla', label: 'Vanilla'},
+        {value: 'chocolate', label: 'Chocolate'},
+        {value: 'strawberry', label: 'Strawberry'},
+        {value: 'vanilla', label: 'Vanilla'},
     ];
 
     const [options, setOptions]= useState<string[]>([])

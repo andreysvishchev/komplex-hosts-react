@@ -17,10 +17,6 @@ import {button, theme} from "../../style/style";
 
 
 
-
-
-
-
 const LegalAddress = () => {
 
 
