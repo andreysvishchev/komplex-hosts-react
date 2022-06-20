@@ -13,7 +13,7 @@ const ConfidantTable = () => {
     const state = useSelector<RootStateType, ConfidantType[]>(state => state.confidant)
     const dispatch = useDispatch()
 
-    const deleteItem = (id: number) => {
+    const deleteItem = (id: string) => {
         dispatch(deleteConfidantAC(id))
     }
 
@@ -32,7 +32,7 @@ const ConfidantTable = () => {
                                 <div className={s.col}>{el.name}</div>
                                 <div className={s.col}>{el.passport}</div>
                                 <div className={s.col}>{el.tel}</div>
-                                <TableMenu callBack={()=>deleteItem(el.id)} model={el}/>
+                                <TableMenu callBack={()=>deleteItem(el.id)} id={el.id} name={el.name} passport={el.passport} tel={el.tel}/>
                             </div>
                         )
                     })

@@ -4,7 +4,8 @@ import {Note} from "./note/Note";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../../store/store";
 import {deleteAllNotes, NoteType} from "../../../../reducers/notesReducer";
-import ContextMenu from "../contextMenu/ContextMenu";
+import ConfidantMenu from "../contextMenu/ConfidantMenu";
+import NotesMenu from "../contextMenu/NotesMenu";
 
 
 const Notes = () => {
@@ -21,7 +22,7 @@ const Notes = () => {
             <div className={notes.length === 0 ? `${s.top} ${s.zero}` : s.top}>
                 <h4 className={s.caption}>Заметки</h4>
                 <a href="#" className={s.link}>?</a>
-                <ContextMenu callBack={deleteAll} notBtn={notes.length !== 0}/>
+                <NotesMenu notBtn={notes.length !== 0}/>
             </div>
             <div className={s.items}>
                 {notes.length !== 0 ?

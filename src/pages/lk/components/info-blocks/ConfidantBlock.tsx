@@ -2,18 +2,14 @@ import React from 'react';
 import ConfidantTable from "../tables/ConfidantTable";
 import s from "./InfoBlock.module.scss";
 import Search from "../search/Search";
-import ContextMenu from "../contextMenu/ContextMenu";
+import ConfidantMenu from "../contextMenu/ConfidantMenu";
 import {useDispatch} from "react-redux";
 import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
 
 
 const ConfidantBlock = () => {
 
-    const dispatch = useDispatch()
 
-    const deleteAll = () => {
-        dispatch(deleteAllConfidant())
-    }
 
     return (
         <div className={s.wrap}>
@@ -23,11 +19,10 @@ const ConfidantBlock = () => {
                     <a href="#" className={s.link}>?</a>
                 </div>
                 <Search/>
-                <ContextMenu callBack={deleteAll} />
+                <ConfidantMenu />
             </div>
             <ConfidantTable/>
             <button className={s.show}>Развернуть всех</button>
-
         </div>
     );
 };

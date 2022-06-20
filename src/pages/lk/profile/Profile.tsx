@@ -6,14 +6,14 @@ import ContactsForm from "../../forms/ContactsForm";
 import RequisitesForm from "../../forms/RequisitesForm";
 import CommonForm from "../../forms/CommonForm";
 
-const Profile = () => {
+export const Profile = () => {
 
     return (
         <>
             <div className={s.profile}>
                 <div className={ `${s.wrap} ${s.profile__top}`}>
                     <div className={s.user}>
-                        <div className={s.user__icon}></div>
+                        <div className={s.user__icon}/>
                         <div className={s.user__name}>филиал фгуп нпо микроген минздрава россии в городе нижний новгород</div>
                     </div>
                     <div className={s.contract}>
@@ -57,4 +57,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+

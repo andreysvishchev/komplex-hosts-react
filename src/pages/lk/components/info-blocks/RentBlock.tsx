@@ -1,7 +1,7 @@
 import React from 'react';
 import {RentTable} from '../tables/RentTable';
 import s from "./InfoBlock.module.scss";
-import ContextMenu from "../contextMenu/ContextMenu";
+import ConfidantMenu from "../contextMenu/ConfidantMenu";
 
 type StateType = {
     id: number
@@ -21,9 +21,7 @@ const RentBlock = (props: PropsType) => {
 
 
 
-    const callBack = () => {
 
-    }
 
     return (
         <>
@@ -36,7 +34,7 @@ const RentBlock = (props: PropsType) => {
                                 <h4 className={s.caption}>{el.title}</h4>
                                 <span className={s.number}>{el.number}</span>
                                 {!props.archive && <a href="#" className={s.link}>?</a>}
-                                {!props.archive && <ContextMenu callBack={callBack}/>}
+                                {!props.archive && <ConfidantMenu/>}
                             </div>
                             <RentTable archive={props.archive}/>
                             <div className={!props.archive ? s.bot : `${s.bot} ${s.archive}`}>

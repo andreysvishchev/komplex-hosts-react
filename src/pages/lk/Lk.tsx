@@ -8,8 +8,9 @@ import Union from "./Union/Union";
 import Notice from "./notifications/Notice";
 import Support from "./support/Support";
 import Docs from "./docs/Docs";
-import Profile from "./profile/Profile";
+
 import Faq from "./faq/Faq";
+import {Profile} from "./profile/Profile";
 
 const Lk = () => {
     return (

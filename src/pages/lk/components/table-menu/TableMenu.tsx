@@ -6,8 +6,11 @@ import ConfidantModal from "../../../modals/ConfidantModal";
 import {ConfidantType} from "../../../../reducers/confidantReducer";
 
 type TableMenuPropsType = {
-    model: ConfidantType
     callBack: () => void
+    name: string
+    passport: string
+    tel: string
+    id: string
 }
 
 const TableMenu = (props: TableMenuPropsType) => {
@@ -35,7 +38,14 @@ const TableMenu = (props: TableMenuPropsType) => {
                 <button onClick={handleOpen} className={s.button}>Изменить</button>
                 <button onClick={onClickHandler} className={s.button}>Удалить</button>
             </div>
-            <ConfidantModal title={'Изменить доверенное лицо'} open={openModal} setOpen={setOpenModal} model={props.model}/>
+            <ConfidantModal title={'Изменить доверенное лицо'}
+                            open={openModal}
+                            setOpen={setOpenModal}
+                            name={props.name}
+                            passport={props.passport}
+                            tel={props.tel}
+                            id={props.id}
+            />
         </div>
 
     );

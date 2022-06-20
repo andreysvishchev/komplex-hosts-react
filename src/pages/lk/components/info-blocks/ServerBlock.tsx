@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./InfoBlock.module.scss";
 import IpTable from "../tables/IpTable";
-import ContextMenu from "../contextMenu/ContextMenu";
+import ConfidantMenu from "../contextMenu/ConfidantMenu";
 
 type PropsType = {
     archive?: boolean
@@ -21,7 +21,7 @@ const ServerBlock = (props: PropsType) => {
                         <h4 className={s.caption}>D-01</h4><span
                         className={s.number}>253/893.156</span>
                     </div>
-                    {!props.archive && <ContextMenu callBack={callBack}/>}
+                    {!props.archive && <ConfidantMenu/>}
                     {!props.archive && <div className={`${s.button} ${s.server__btn}`}>Консоль управления</div>}
 
                 </div>

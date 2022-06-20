@@ -3,7 +3,7 @@ import s from './Note.module.scss'
 import TableMenu from "../../table-menu/TableMenu";
 import {useDispatch} from "react-redux";
 import {deleteNoteAC} from "../../../../../reducers/notesReducer";
-import ContextMenu from "../../contextMenu/ContextMenu";
+import ConfidantMenu from "../../contextMenu/ConfidantMenu";
 import NoteMenu from "../../note-menu/NoteMenu";
 
 type NotePropsType = {
