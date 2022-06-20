@@ -51,3 +51,7 @@ ul,
 ol {
   list-style: none;
 }
+
+.MuiSelect-select.Mui-focusVisible {
+  border: 2px solid red;
+}

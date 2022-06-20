@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from "../../Form.module.scss";
-import Select from "react-select";
+
+import {
+    FormControl,
+    makeStyles,
+    MenuItem,
+    OutlinedInput,
+    Select,
+    SelectChangeEvent,
+    selectClasses
+} from "@mui/material";
 
 type PropsType = {
     caption: string
@@ -13,52 +22,51 @@ const FormSelect: React.FC<PropsType> = (props) => {
         placeholder,
     } = props
 
-    const options = [
+
+
+    const state = [
         {value: 'chocolate', label: 'Chocolate'},
         {value: 'strawberry', label: 'Strawberry'},
         {value: 'vanilla', label: 'Vanilla'},
     ];
 
-    const customStyles = {
-        control: () => ({
-            border: '1px solid #DEDEDE',
-            borderRadius: '4px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '100%',
-        }),
-        valueContainer: () => ({
-            padding: '8px 16px',
-            display: 'flex',
-        }),
-        indicatorsContainer: () => ({
-            border: 'none',
-        }),
-        input: () => ({
-            margin: 0,
-            padding: 0
-        }),
-        placeholder: () => ({
-            color: '#818181'
-        }),
-        menu: (provided: any)=> ({
-      ...provided,
-            boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.05)',
+    const [options, setOptions]= useState<string[]>([])
 
-            border: 'none',
-            borderRadius: '0px 0px 4px 4px',
-        }),
-
-
-
-    }
-
+    const handleChange = (event: SelectChangeEvent<typeof options>) => {
+        const {
+            target: { value },
+        } = event;
+        setOptions(
+            typeof value === 'string' ? value.split(',') : value,
+        );
+    };
 
     return (
-        <div className={s.select}>
-            <div className={s.select__caption}>{caption}</div>
-            <Select options={options} styles={customStyles} placeholder={placeholder} />
+        <div className={s.wrap}>
+            <div className={s.caption}>{caption}</div>
+            <FormControl fullWidth>
+                <Select
+
+                    displayEmpty
+                    onChange={handleChange}
+                    value={options}
+                    renderValue={(selected) => {
+                        if (selected.length === 0) {
+                            return <em>{placeholder}</em>;
+                        }
+                        return selected.join(', ');
+                    }}>
+                    {state.map(el => {
+                        return (
+                            <MenuItem key={el.value} value={el.value}>{el.label}</MenuItem>
+                        )
+                    })}
+                </Select>
+
+
+            </FormControl>
         </div>
+
     );
 };
 
