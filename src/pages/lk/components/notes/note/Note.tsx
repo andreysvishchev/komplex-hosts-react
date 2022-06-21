@@ -1,14 +1,12 @@
-import React, {memo, MouseEventHandler, useCallback, useEffect, useRef, useState} from "react";
+import React, {memo} from "react";
 import s from './Note.module.scss'
-import TableMenu from "../../table-menu/TableMenu";
 import {useDispatch} from "react-redux";
 import {deleteNoteAC} from "../../../../../reducers/notesReducer";
-import ConfidantMenu from "../../contextMenu/ConfidantMenu";
-import NoteMenu from "../../note-menu/NoteMenu";
+import NoteMenu from "../../contextMenu/NoteMenu";
 
 type NotePropsType = {
-    id: number
-    data: string
+    id: string
+    date: string
     caption: string
     important: boolean
 }
@@ -17,9 +15,9 @@ export const Note: React.FC<NotePropsType> = memo((props) => {
 
     const {
         id,
-        data,
+        date,
         caption,
-        important
+        important,
     } = props
 
     const dispatch = useDispatch()
@@ -29,11 +27,17 @@ export const Note: React.FC<NotePropsType> = memo((props) => {
     }
 
     return (
-        <div
+        <div data-note='style'
             className={s.item}>
-            <div className={s.data}>{data}</div>
+            <div className={s.data}>{date}</div>
             <div className={important ? `${s.caption} ${s.important}` : s.caption}>{caption}</div>
-            <NoteMenu callBack={deleteNote}/>
+            <NoteMenu
+                callBack={deleteNote}
+                date={date}
+                text={caption}
+                important={important}
+                noteId={props.id}
+            />
         </div>
     )
 })

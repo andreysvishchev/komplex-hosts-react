@@ -42,6 +42,10 @@
   right: 0;
 }
 
+.inner {
+
+}
+
 .burger {
   background-color: transparent;
   display: flex;
@@ -55,9 +59,79 @@
   span {
     width: 24px;
     height: 2px;
-    background-color: $dark-blue;
-    transition: background-color .2s ease-in-out;
+  }
+
+  &.blue {
+    span {
+      background-color: $blue;
+    }
+  }
+
+  &.dark {
+    span {
+      background-color: $dark-blue;
+    }
   }
 }
+
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+
+    span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $gray;
+      margin: 0 3px;
+      transition: background-color .2s ease-in-out;
+    }
+
+    &.isOpen {
+      span {
+        background-color: $dark-blue;
+      }
+    }
+
+    &.blue.isOpen {
+      span {
+        background-color: $blue;
+      }
+    }
+
+    &.dark.isOpen {
+      span {
+        background-color: $dark-blue;
+      }
+    }
+  }
+  &__menu {
+    position: absolute;
+    z-index: 10;
+    bottom: -50px;
+    right: 40px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0px 0px 4px 4px;
+    background-color: $white;
+    flex-direction: column;
+    display: none;
+
+    &.isOpen {
+      display: flex;
+    }
+  }
+}
+
 
 

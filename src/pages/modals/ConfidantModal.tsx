@@ -66,7 +66,7 @@ const ConfidantModal = (props: PropsType) => {
                 <EditableInput caption={'ФИО'} placeholder={'Введите ФИО'} value={name} setValue={nameHandler}/>
                 <EditableInput caption={'Серия и номер паспорта'} placeholder={'Введите серию и номер паспорта'}
                                value={passport} setValue={passportHandler}/>
-                <EditableInput caption={'ФИО'} placeholder={'Введите телефон'} value={tel} setValue={telHandler}/>
+                <EditableInput caption={'Телефон'} placeholder={'Введите телефон'} value={tel} setValue={telHandler}/>
                 <div className={s.row}>
                     <button onClick={handleClose} className={s.cancel}>Отмена</button>
                     <button onClick={props.new

@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import s from './Table.module.scss';
-import TableMenu from "../table-menu/TableMenu";
+import TableMenu from "../contextMenu/TableMenu";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../../store/store";
 import {ConfidantType, deleteConfidantAC} from "../../../../reducers/confidantReducer";
 
 
 
-const ConfidantTable = () => {
-
+const ConfidantTable = React.memo( () => {
 
     const state = useSelector<RootStateType, ConfidantType[]>(state => state.confidant)
     const dispatch = useDispatch()
@@ -41,6 +40,6 @@ const ConfidantTable = () => {
             </div>
         </div>
     );
-};
+})
 
 export default ConfidantTable;

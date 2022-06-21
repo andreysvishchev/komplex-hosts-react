@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "../Lk.module.scss";
 
-import FaqAccordion from "../components/faqAccordion/FaqAccordion";
+import FaqAccordion from "../components/accordions/FaqAccordion";
 
 const Faq = () => {
     const state = [

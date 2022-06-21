@@ -1,8 +1,6 @@
 import React, {MutableRefObject, useState} from 'react';
 import s from './ContextMenu.module.scss'
 import {useOnClickOutside} from "../../../../function/useOnClickOutside";
-import {useDispatch} from "react-redux";
-import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
 import ConfidantModal from "../../../modals/ConfidantModal";
 import ConfirmModal from "../../../modals/ConfirmModal";
 
@@ -30,7 +28,7 @@ const ConfidantMenu = (props: ContextMenuPropsType) => {
 
     return (
         <div className={s.wrap} ref={myRef}>
-            <button className={toggle ? `${s.burger} ${s.isOpen}` : s.burger}
+            <button className={toggle ? `${s.dark} ${s.isOpen} ${s.burger}` : `${s.dark} ${s.burger}`}
                     onClick={() => setToggle(!toggle)}>
                 <span/>
                 <span/>

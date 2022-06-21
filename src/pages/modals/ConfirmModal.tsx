@@ -6,7 +6,7 @@ import EditableInput from "../forms/components/EditInput/EditableInput";
 import {ConfidantType, deleteAllConfidant} from "../../reducers/confidantReducer";
 import NoticeModal from "./NoticeModal";
 import {useDispatch} from "react-redux";
-import {deleteAllNotes} from "../../reducers/notesReducer";
+import {deleteAllNotes, deleteNoteAC} from "../../reducers/notesReducer";
 
 type PropsType = {
     messages: string
@@ -14,6 +14,9 @@ type PropsType = {
     setOpen: (open: boolean) => void
     confidant?: boolean
     notes?: boolean
+    deleteAll?: boolean
+    noteId?: string
+    noteCaption?: string
 }
 
 const ConfirmModal = (props: PropsType) => {
@@ -32,6 +35,13 @@ const ConfirmModal = (props: PropsType) => {
         dispatch(deleteAllNotes())
         setOpenNoticeModal(true)
     }
+    const deleteNoteHandler = () => {
+        if (props.noteId) {
+            props.setOpen(false)
+            dispatch(deleteNoteAC(props.noteId))
+            setOpenNoticeModal(true)
+        }
+    }
 
     return (
         <div>
@@ -47,8 +57,8 @@ const ConfirmModal = (props: PropsType) => {
                         <div className={s.row}>
                             <button onClick={handleClose} className={s.cancel}>Отмена</button>
                             {props.confidant &&
-                            <button onClick={deleteConfidantsHandler} className={s.save}>Ок</button>}
-                            {props.notes && <button onClick={deleteNotesHandler} className={s.save}>Ок</button>}
+                                <button onClick={deleteConfidantsHandler} className={s.save}>Ок</button>}
+                            {props.notes && <button onClick={props.deleteAll ? deleteNotesHandler : deleteNoteHandler} className={s.save}>Ок</button>}
                         </div>
                     </div>
                 </Box>
@@ -58,7 +68,7 @@ const ConfirmModal = (props: PropsType) => {
                 open={openNoticeModal}
                 setOpen={setOpenNoticeModal}/>}
             {props.notes && <NoticeModal
-                message={'Все заметки удалены'}
+                message={props.deleteAll ? 'Все заметки удалены' : `Запись ${props.noteCaption} удалена`}
                 open={openNoticeModal}
                 setOpen={setOpenNoticeModal}/>}
         </div>

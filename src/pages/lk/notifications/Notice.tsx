@@ -3,7 +3,7 @@ import s from '../Lk.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../../store/store";
 import {NoticeType, readNoticeAC} from "../../../reducers/noticeReducer";
-import NoticeAccordion from "../components/noticeAccordion/NoticeAccordion";
+import NoticeAccordion from "../components/accordions/NoticeAccordion";
 
 const Notice = () => {
 

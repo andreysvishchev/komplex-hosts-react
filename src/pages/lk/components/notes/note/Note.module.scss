@@ -11,6 +11,7 @@
   position: relative;
   height: 40px;
 
+
   &.active {
     z-index: 3;
   }
@@ -29,6 +30,7 @@
 
   &.important {
     padding-left: 15px;
+
     &::before {
       display: block;
     }

@@ -1,10 +1,8 @@
 import React, {MutableRefObject, useState} from 'react';
 import s from './ContextMenu.module.scss'
 import {useOnClickOutside} from "../../../../function/useOnClickOutside";
-import {useDispatch} from "react-redux";
-import {deleteAllConfidant} from "../../../../reducers/confidantReducer";
-import ConfidantModal from "../../../modals/ConfidantModal";
 import ConfirmModal from "../../../modals/ConfirmModal";
+import NoteModal from "../../../modals/NoteModal";
 
 
 type NotesMenuPropsType = {
@@ -13,38 +11,43 @@ type NotesMenuPropsType = {
 
 const NotesMenu = (props: NotesMenuPropsType) => {
     const [toggle, setToggle] = useState(false);
-    const [openModal, setOpenModal] = React.useState(false);
-    const [openNotesModal, setOpenNotesModalModal] = React.useState(false);
+    const [openConfirmModal, setOpenConfirmModal] = React.useState(false);
+    const [openNoteModal, setOpenNoteModal] = React.useState(false);
     const myRef = React.useRef() as MutableRefObject<HTMLDivElement>
 
-
-    const openConfirmModal = () => {
-        setOpenModal(true)
+    const openConfirmModalHandler = () => {
+        setOpenConfirmModal(true)
     }
     const openNotesModalHandler = () => {
-
+        setOpenNoteModal(true)
     }
-
 
     useOnClickOutside(myRef, () => setToggle(false))
 
     return (
         <div className={s.wrap} ref={myRef}>
-            <button className={toggle ? `${s.burger} ${s.isOpen}` : s.burger}
-                    onClick={() => setToggle(!toggle)}>
-                <span/>
-                <span/>
-                <span/>
-            </button>
+            {props.notBtn &&
+                <button className={toggle ? `${s.burger} ${s.isOpen} ${s.blue}` : `${s.burger} ${s.blue}`}
+                        onClick={() => setToggle(!toggle)}>
+                    <span/>
+                    <span/>
+                    <span/>
+                </button>}
+
             <div className={toggle ? `${s.menu} ${s.isOpen}` : s.menu}>
                 <button onClick={openNotesModalHandler} className={s.button}>Добавить</button>
-                <button onClick={openConfirmModal} className={s.button}>Удалить все</button>
+                <button onClick={openConfirmModalHandler} className={s.button}>Удалить все</button>
             </div>
-
+            <NoteModal
+                date={new Date().toLocaleDateString()}
+                open={openNoteModal}
+                setOpen={setOpenNoteModal}
+                text={''}
+                important={false}/>
             <ConfirmModal
                 notes={true}
-                open={openModal}
-                setOpen={setOpenModal}
+                open={openConfirmModal}
+                setOpen={setOpenConfirmModal}
                 messages={'Вы уверены, что хотите удалить все заметки?'}/>
         </div>
 
