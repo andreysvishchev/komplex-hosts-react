@@ -10,11 +10,6 @@ import {ConfidantType, deleteConfidantAC} from "../../../../reducers/confidantRe
 const ConfidantTable = React.memo( () => {
 
     const state = useSelector<RootStateType, ConfidantType[]>(state => state.confidant)
-    const dispatch = useDispatch()
-
-    const deleteItem = (id: string) => {
-        dispatch(deleteConfidantAC(id))
-    }
 
     return (
         <div>
@@ -31,7 +26,7 @@ const ConfidantTable = React.memo( () => {
                                 <div className={s.col}>{el.name}</div>
                                 <div className={s.col}>{el.passport}</div>
                                 <div className={s.col}>{el.tel}</div>
-                                <TableMenu callBack={()=>deleteItem(el.id)} id={el.id} name={el.name} passport={el.passport} tel={el.tel}/>
+                                <TableMenu id={el.id} name={el.name} passport={el.passport} tel={el.tel}/>
                             </div>
                         )
                     })

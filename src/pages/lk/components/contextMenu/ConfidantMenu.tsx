@@ -48,6 +48,7 @@ const ConfidantMenu = (props: ContextMenuPropsType) => {
                 new={true}
             />
             <ConfirmModal
+                deleteAll={true}
                 confidant={true}
                 open={openModal}
                 setOpen={setOpenModal}

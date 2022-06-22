@@ -45,6 +45,7 @@ const NotesMenu = (props: NotesMenuPropsType) => {
                 text={''}
                 important={false}/>
             <ConfirmModal
+                deleteAll={true}
                 notes={true}
                 open={openConfirmModal}
                 setOpen={setOpenConfirmModal}

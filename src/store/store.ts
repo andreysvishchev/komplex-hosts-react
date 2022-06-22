@@ -4,13 +4,15 @@ import {confidantReducer} from "../reducers/confidantReducer";
 import {noticeReducer} from "../reducers/noticeReducer";
 import {authReducer} from "../reducers/authReducer";
 import {TypedUseSelectorHook, useSelector} from "react-redux";
+import {modalReducer} from "../reducers/modal-reducer";
 
 
 const rootState = combineReducers({
     notes: notesReducer,
     confidant: confidantReducer,
     notice: noticeReducer,
-    auth: authReducer
+    auth: authReducer,
+    modal: modalReducer
 })
 
 export type RootStateType = ReturnType<typeof rootState>
