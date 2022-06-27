@@ -49,6 +49,9 @@ const ConfidantModal = (props: PropsType) => {
     const newConfidant = (name: string, passport: string, tel: string) => {
         if (name !== '' && passport !== '' && tel !== '') {
             dispatch(addConfidantAC(name, passport, tel))
+            setName('')
+            setTel('')
+            setPassport('')
             props.setOpen(false)
         }
     }

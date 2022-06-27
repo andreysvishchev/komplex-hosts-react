@@ -29,15 +29,17 @@ const ConfirmModal = (props: PropsType) => {
     const deleteConfidantsHandler = () => {
         props.setOpen(false);
         dispatch(deleteAllConfidant())
+        dispatch(openModalAC(true, 'Все записи из таблицы “Доверенное лицо” удалены'))
     }
     const deleteNotesHandler = () => {
         props.setOpen(false);
         dispatch(deleteAllNotes())
+        dispatch(openModalAC(true, 'Все заметки удалены'))
     }
     const deleteNoteHandler = () => {
         if (props.noteId) {
             props.setOpen(false)
-            dispatch(deleteNoteAC(props.noteId))
+            dispatch(openModalAC(true, `Запись ${props.noteCaption} удалена`))
         }
     }
 
@@ -45,7 +47,7 @@ const ConfirmModal = (props: PropsType) => {
         if (props.confidantId) {
             props.setOpen(false)
             dispatch(deleteConfidantAC(props.confidantId))
-            dispatch(openModalAC(true, 'gola'))
+            dispatch(openModalAC(true, `Доверенное лицо ${props.confidantCaption} удалено из таблицы`))
         }
 
     }

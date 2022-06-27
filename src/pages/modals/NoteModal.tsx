@@ -32,6 +32,7 @@ const NoteModal = (props: PropsType) => {
     const addNote = () => {
         if (value !== '') {
             dispatch(addNoteAC(props.date, value, check))
+            setValue('')
             props.setOpen(false)
         }
     }

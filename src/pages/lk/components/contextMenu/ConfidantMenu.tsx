@@ -11,13 +11,13 @@ type ContextMenuPropsType = {
 
 const ConfidantMenu = (props: ContextMenuPropsType) => {
     const [toggle, setToggle] = useState(false);
-    const [openModal, setOpenModal] = React.useState(false);
+    const [openConfirmModal, setOpenConfirmModal] = React.useState(false);
     const [openConfidantModal, setOpenConfidantModal] = React.useState(false);
     const myRef = React.useRef() as MutableRefObject<HTMLDivElement>
 
 
-    const openConfirmModal = () => {
-        setOpenModal(true)
+    const openConfirmModalHandler = () => {
+        setOpenConfirmModal(true)
     }
     const openConfModal = () => {
         setOpenConfidantModal(true)
@@ -36,7 +36,7 @@ const ConfidantMenu = (props: ContextMenuPropsType) => {
             </button>
             <div className={toggle ? `${s.menu} ${s.isOpen}` : s.menu}>
                 <button onClick={openConfModal} className={s.button}>Добавить</button>
-                <button onClick={openConfirmModal} className={s.button}>Удалить все</button>
+                <button onClick={openConfirmModalHandler} className={s.button}>Удалить все</button>
             </div>
             <ConfidantModal
                 title={'Новое доверенное лицо'}
@@ -50,8 +50,8 @@ const ConfidantMenu = (props: ContextMenuPropsType) => {
             <ConfirmModal
                 deleteAll={true}
                 confidant={true}
-                open={openModal}
-                setOpen={setOpenModal}
+                open={openConfirmModal}
+                setOpen={setOpenConfirmModal}
                 messages={'Вы уверены, что хотите удалить все записи из таблицы “Доверенное лицо”?'}/>
         </div>
 
