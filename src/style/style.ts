@@ -1,5 +1,4 @@
 import {createTheme} from "@mui/material";
-import exp from "constants";
 
 export const button = {
     backgroundColor: '#00B6F4',

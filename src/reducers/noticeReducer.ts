@@ -69,8 +69,6 @@ export const noticeReducer = (state: InitStateType = initState, action: ActionsT
         default:
             return state
     }
-
-
 }
 
 type ActionsType = ReadNoticeActionType

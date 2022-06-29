@@ -5,6 +5,7 @@ import {noticeReducer} from "../reducers/noticeReducer";
 import {authReducer} from "../reducers/authReducer";
 import {TypedUseSelectorHook, useSelector} from "react-redux";
 import {modalReducer} from "../reducers/modal-reducer";
+import {equipReducer} from "../reducers/equipReducer";
 
 
 const rootState = combineReducers({
@@ -12,7 +13,8 @@ const rootState = combineReducers({
     confidant: confidantReducer,
     notice: noticeReducer,
     auth: authReducer,
-    modal: modalReducer
+    modal: modalReducer,
+    equips: equipReducer
 })
 
 export type RootStateType = ReturnType<typeof rootState>

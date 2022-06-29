@@ -1,20 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Table.module.scss';
+import EquipModal from "../../../modals/EquipModal";
+import EquipItem from "./EquipItem";
+import {useSelector} from "react-redux";
+import {RootStateType} from "../../../../store/store";
+import {EquipType} from "../../../../reducers/equipReducer";
 
-type EquipTableType = {
-    id: number
-    serialNumber: number
-    name: string
-    comment: string
-}
+
 
 const EquipTable = () => {
-    let table: EquipTableType[] = [
-        {id: 1, serialNumber: 3059340, name: 'Наименование оборудования', comment: 'Редактировать'},
-        {id: 2, serialNumber: 3059340, name: 'Наименование оборудования', comment: 'Редактировать'},
-        {id: 3, serialNumber: 3059340, name: 'Наименование оборудования', comment: 'Редактировать'},
-        {id: 4, serialNumber: 3059340, name: 'Наименование оборудования', comment: 'Редактировать'},
-    ]
+
+
+    const table = useSelector<RootStateType, EquipType[]>(state => state.equips)
+
 
     return (
 
@@ -27,14 +25,13 @@ const EquipTable = () => {
             {table.length !== 0 ?
                 table.map(el => {
                     return (
-                        <div className={`${s.row} ${s.equip}`} key={el.id}>
-                            <div className={s.col}>{el.serialNumber}</div>
-                            <div className={s.col}>{el.name}</div>
-                            <div className={s.col}>
-                                <span> {el.comment}</span>
-                                <button className={s.edit}/>
-                            </div>
-                        </div>
+                        <EquipItem
+                            key={el.id}
+                            id={el.id}
+                            comment={el.comment}
+                            name={el.name}
+                            serialNumber={el.serialNumber}
+                        />
                     )
                 })
                 : <div className={s.empty}>В таблице пока нет записей</div>

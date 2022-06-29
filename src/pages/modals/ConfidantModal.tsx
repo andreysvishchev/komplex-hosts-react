@@ -59,10 +59,7 @@ const ConfidantModal = (props: PropsType) => {
     return (
         <Modal
             open={props.open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-        >
+            onClose={handleClose}>
             <Box sx={modal}>
                 <button onClick={handleClose} className={s.close}/>
                 <div className={s.caption}>{props.title} </div>

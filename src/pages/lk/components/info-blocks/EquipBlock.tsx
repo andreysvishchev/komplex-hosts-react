@@ -2,6 +2,7 @@ import React from 'react';
 import s from "./InfoBlock.module.scss";
 import Search from "../search/Search";
 import EquipTable from "../tables/EquipTable";
+import EquipModal from "../../../modals/EquipModal";
 
 
 const EquipBlock = () => {
