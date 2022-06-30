@@ -55,7 +55,7 @@
 
   &__icon {
     position: absolute;
-    top: 6px;
+    top: 4px;
     right: 15px;
     width: 16px;
     height: 12px;
@@ -93,12 +93,6 @@
     &.error {
       border-color: $red;
     }
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
   }
 }
 
@@ -121,4 +115,13 @@
   margin: 8px 0 16px;
 }
 
+.select {
+  margin-bottom: 16px;
+  &__caption {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 

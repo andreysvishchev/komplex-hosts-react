@@ -10,16 +10,23 @@ export const initState = [
 
 
 export const equipReducer = (state: initStateType = initState, action: ActionsType) => {
-    switch (action) {
+    switch (action.type) {
+        case "SAVE-COMMENT":
+            return state.map(el=>el.id === action.id ? {...el, comment: action.comment} : el)
         default:
             return state
 
     }
 }
 
+// actions
+export const saveCommentAC = (id: string, comment: string) => {
+    return {type: 'SAVE-COMMENT', id, comment} as const
+}
 
 // types
-type ActionsType = {}
+type ActionsType =
+    | ReturnType<typeof saveCommentAC>
 export type initStateType = EquipType[]
 export type EquipType = {
     id: string

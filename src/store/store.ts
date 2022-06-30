@@ -6,6 +6,7 @@ import {authReducer} from "../reducers/authReducer";
 import {TypedUseSelectorHook, useSelector} from "react-redux";
 import {modalReducer} from "../reducers/modal-reducer";
 import {equipReducer} from "../reducers/equipReducer";
+import {rentBlockReducer} from "../reducers/rentBlockReducer";
 
 
 const rootState = combineReducers({
@@ -14,7 +15,8 @@ const rootState = combineReducers({
     notice: noticeReducer,
     auth: authReducer,
     modal: modalReducer,
-    equips: equipReducer
+    equips: equipReducer,
+    rent: rentBlockReducer
 })
 
 export type RootStateType = ReturnType<typeof rootState>

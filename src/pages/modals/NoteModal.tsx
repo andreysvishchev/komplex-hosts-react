@@ -2,11 +2,9 @@ import React, {ChangeEvent, useState} from 'react';
 import {Box, Modal} from "@mui/material";
 import {modal} from "../../style/style";
 import s from "./Modal.module.scss";
-import EditableInput from "../forms/components/EditInput/EditableInput";
 import {useDispatch} from "react-redux";
-import {addConfidantAC, editConfidantAC} from "../../reducers/confidantReducer";
-import {addNoteAC} from "../../reducers/notesReducer";
-import NoticeModal from "./NoticeModal";
+import {addNoteAC, editNoteAC} from "../../reducers/notesReducer";
+
 
 type PropsType = {
     new?: boolean
@@ -30,9 +28,17 @@ const NoteModal = (props: PropsType) => {
         setValue(e.currentTarget.value)
     }
     const addNote = () => {
+        debugger
         if (value !== '') {
             dispatch(addNoteAC(props.date, value, check))
             setValue('')
+            props.setOpen(false)
+        }
+    }
+    const editNote = () => {
+        debugger
+        if(props.id) {
+            dispatch(editNoteAC(props.id, value, check))
             props.setOpen(false)
         }
     }
@@ -56,7 +62,7 @@ const NoteModal = (props: PropsType) => {
                     </label>
                     <div className={s.row}>
                         <button onClick={handleClose} className={s.cancel}>Отмена</button>
-                        <button className={s.save} onClick={addNote}>Сохранить
+                        <button className={s.save} onClick={props.new ? addNote : editNote}>Сохранить
                         </button>
                     </div>
                 </Box>

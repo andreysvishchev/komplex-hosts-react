@@ -25,7 +25,11 @@ export const theme = createTheme({
             fontSize: '16px',
             lineHeight: '24px',
             fontFamily: 'inherit'
-        },
-
+        }
     }
 });
+
+
+
+
+

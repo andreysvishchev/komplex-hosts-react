@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {RentTable} from '../tables/RentTable';
 import s from "./InfoBlock.module.scss";
 import ConfidantMenu from "../contextMenu/ConfidantMenu";
+import Configurator from "../../../modals/Configurator";
 
 type StateType = {
     id: number
@@ -18,6 +19,8 @@ const RentBlock = (props: PropsType) => {
     let state: StateType [] = [
         {id: 1, title: 'Аренда места', number: '253/893.156',},
     ]
+
+    const [openConfigurator, setOpenConfigurator] =  useState<boolean>(true)
 
 
 
@@ -70,6 +73,7 @@ const RentBlock = (props: PropsType) => {
                     </div>
                 </div>
             }
+            <Configurator open={openConfigurator} setOpen={setOpenConfigurator}/>
         </>
     );
 };

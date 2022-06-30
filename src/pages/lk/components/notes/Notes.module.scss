@@ -32,7 +32,19 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  scrollbar-color: $blue;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: $gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 10px;
+  }
+
+  scrollbar-color: $blue $gray;
+  scrollbar-width: thin;
 }
 
 .link {

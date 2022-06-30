@@ -39,6 +39,7 @@ const NotesMenu = (props: NotesMenuPropsType) => {
                 <button onClick={openConfirmModalHandler} className={s.button}>Удалить все</button>
             </div>
             <NoteModal
+                new={true}
                 date={new Date().toLocaleDateString()}
                 open={openNoteModal}
                 setOpen={setOpenNoteModal}

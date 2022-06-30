@@ -7,6 +7,7 @@
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
+    min-height: 42px !important;
     &--is-focused {
       border-color: #00B6F4!important;
     }
@@ -54,6 +55,8 @@
       cursor: pointer;
       width: 3px;
     }
+    scrollbar-color: #00B6F4 #DEDEDE ;
+    scrollbar-width: thin;
   }
   &__option {
     font-weight: 400 !important;

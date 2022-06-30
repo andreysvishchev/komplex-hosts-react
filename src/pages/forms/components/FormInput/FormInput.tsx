@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import s from "../../Form.module.scss";
+
 
 type PropsType = {
     caption: string
@@ -7,13 +8,17 @@ type PropsType = {
     type?: string
     style?: any
     password?: boolean
+    value?: string | number
 }
 
 const FormInput: React.FC<PropsType> = (props) => {
 
     const {caption, placeholder, type, style, password,} = props
-
     const [hidden, setHidden] = useState<boolean>(true)
+    const [value, setValue] = useState(props.value)
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+    }
 
     const togglePassword = () => {
         setHidden(!hidden)
@@ -34,7 +39,7 @@ const FormInput: React.FC<PropsType> = (props) => {
             :
             <div className={s.input} style={style}>
                 <div className={s.input__caption}>{caption}</div>
-                <input type={type} className={s.input__field} placeholder={placeholder}/>
+                <input className={s.input__field} placeholder={placeholder} value={value} onChange={onChangeHandler}/>
             </div>
 
     )

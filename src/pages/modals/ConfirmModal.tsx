@@ -42,7 +42,6 @@ const ConfirmModal = (props: PropsType) => {
             dispatch(openModalAC(true, `Запись ${props.noteCaption} удалена`))
         }
     }
-
     const deleteConfidantHandler = () => {
         if (props.confidantId) {
             props.setOpen(false)

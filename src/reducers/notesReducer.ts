@@ -23,7 +23,10 @@ export const notesReducer = (state: InitStateType = initState, action: ActionTyp
         case "DELETE-ALL-NOTES":
             return state = []
         case "ADD-NOTE":
-            return [{id: action.id, date: action.date, caption: action.text, important: action.important},...state]
+            return [{id: action.id, date: action.date, caption: action.text, important: action.important}, ...state]
+        case "EDIT-NOTE":
+            debugger
+            return state.map(el=> el.id === action.id ? {...el, caption: action.text, important: action.important} : el)
         default:
             return state
     }
@@ -33,6 +36,7 @@ export type ActionType =
     | ReturnType<typeof deleteAllNotes>
     | ReturnType<typeof deleteNoteAC>
     | ReturnType<typeof addNoteAC>
+    | ReturnType<typeof editNoteAC>
 
 
 export const deleteNoteAC = (noteId: string) => {
@@ -41,6 +45,9 @@ export const deleteNoteAC = (noteId: string) => {
 export const deleteAllNotes = () => {
     return {type: 'DELETE-ALL-NOTES',} as const
 }
-export const addNoteAC = (date: string,text: string, important: boolean ) => {
+export const addNoteAC = (date: string, text: string, important: boolean) => {
     return {type: 'ADD-NOTE', date, text, important, id: v1()} as const
+}
+export const editNoteAC = (id: string, text: string, important: boolean) => {
+    return {type: 'EDIT-NOTE', id, text, important} as const
 }

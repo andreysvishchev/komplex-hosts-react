@@ -11,7 +11,7 @@ type NotePropsType = {
     important: boolean
 }
 
-export const Note: React.FC<NotePropsType> = memo((props) => {
+export const Note: React.FC<NotePropsType> = (props) => {
 
     const {
         id,
@@ -20,25 +20,21 @@ export const Note: React.FC<NotePropsType> = memo((props) => {
         important,
     } = props
 
-    const dispatch = useDispatch()
 
-    const deleteNote = () => {
-        dispatch(deleteNoteAC(id))
-    }
 
     return (
         <div data-note='style'
-            className={s.item}>
+             className={s.item}>
             <div className={s.data}>{date}</div>
             <div className={important ? `${s.caption} ${s.important}` : s.caption}>{caption}</div>
             <NoteMenu
-                callBack={deleteNote}
+
                 date={date}
                 text={caption}
                 important={important}
-                noteId={props.id}
+                id={props.id}
             />
         </div>
     )
-})
+}
 
