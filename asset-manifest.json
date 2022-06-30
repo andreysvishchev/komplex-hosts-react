@@ -1,7 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f8a7f8b.css",
-    "main.js": "/static/js/main.01335756.js",
+    "main.css": "/static/css/main.88674f2e.css",
+    "main.js": "/static/js/main.d98b112b.js",
+    "static/media/Montserrat-Regular.woff": "/static/media/Montserrat-Regular.3db65dc4b858f0fed4fb.woff",
+    "static/media/Montserrat-Medium.woff": "/static/media/Montserrat-Medium.d42dad28f6470e5162c2.woff",
+    "static/media/Montserrat-SemiBold.woff": "/static/media/Montserrat-SemiBold.197213592de7a2a62e06.woff",
+    "static/media/Montserrat-Regular.woff2": "/static/media/Montserrat-Regular.8b56391ed36ea95337c6.woff2",
+    "static/media/Montserrat-Medium.woff2": "/static/media/Montserrat-Medium.d6bbb7c3c86aa8edcd0a.woff2",
+    "static/media/Montserrat-SemiBold.woff2": "/static/media/Montserrat-SemiBold.1d679c8257a6a9caa9bd.woff2",
     "static/media/logo-header.svg": "/static/media/logo-header.ffb32aae6e2f896ba6af0fe00866dec2.svg",
     "static/media/logo.svg": "/static/media/logo.d26631dfe27a70d03b153bac87cc408f.svg",
     "static/media/server.svg": "/static/media/server.6c3b7349df5996ef4be0.svg",
@@ -18,7 +24,7 @@
     "static/media/user-nav.svg": "/static/media/user-nav.c28534098df1a746a53a.svg",
     "static/media/aside-icon-3.svg": "/static/media/aside-icon-3.5b1cdd610f214d6e02cb.svg",
     "static/media/log-out.svg": "/static/media/log-out.14b84a0f1917d64426d4.svg",
-    "static/media/quest.svg": "/static/media/quest.41e6095b455fd920ad82.svg",
+    "static/media/quest.svg": "/static/media/quest.1d3d5a91d852b07ec3bd.svg",
     "static/media/notification.svg": "/static/media/notification.c551f7262afc8c227cde.svg",
     "static/media/support.svg": "/static/media/support.b0d11c3087f2af5fb048.svg",
     "static/media/eye.svg": "/static/media/eye.a18cad1c98e38bfa352d.svg",
@@ -29,7 +35,8 @@
     "static/media/invisible-pasword.svg": "/static/media/invisible-pasword.eece6177b99780f5c2b9.svg",
     "static/media/notification-nav.svg": "/static/media/notification-nav.f5ff092c332ee15ba237.svg",
     "static/media/search.svg": "/static/media/search.4b7639dcf0498780cc3a.svg",
-    "static/media/success.svg": "/static/media/success.84155f3aa105a2716611.svg",
+    "static/media/success.svg": "/static/media/success.c75d9d3720e5d90df5a6.svg",
+    "static/media/close-modal.svg": "/static/media/close-modal.4d8a747a851a4f156012.svg",
     "static/media/balance.svg": "/static/media/balance.e82b65951f828e5e1fd5.svg",
     "index.html": "/index.html",
     "static/media/mail.svg": "/static/media/mail.7b24ac1561e686dc0ed9.svg",
@@ -37,11 +44,11 @@
     "static/media/arrow.svg": "/static/media/arrow.dc32a4b5286736907fe3.svg",
     "static/media/pencil.svg": "/static/media/pencil.a54aaae3ee0a86e9ea4b.svg",
     "static/media/important.svg": "/static/media/important.1abd8958cc95e402f395.svg",
-    "main.5f8a7f8b.css.map": "/static/css/main.5f8a7f8b.css.map",
-    "main.01335756.js.map": "/static/js/main.01335756.js.map"
+    "main.88674f2e.css.map": "/static/css/main.88674f2e.css.map",
+    "main.d98b112b.js.map": "/static/js/main.d98b112b.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f8a7f8b.css",
-    "static/js/main.01335756.js"
+    "static/css/main.88674f2e.css",
+    "static/js/main.d98b112b.js"
   ]
 }
